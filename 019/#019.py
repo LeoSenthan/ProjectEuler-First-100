@@ -5,18 +5,15 @@ year=1900
 fullcount=0
 while year<2001:
     count=0
-    if year%400==0:
-        use=leapmonths
-    elif year%100==0:
-        use=months
-    elif year%4==0:
-        use=leapmonths
+    if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
+        use = leapmonths
     else:
-        use=months
+        use = months
     for month in range(0,len(use)):
         day=day+use[month]
         if day%7==0:
             count=count+1
     if year!=1900:
         fullcount=count+fullcount
+    year=year+1
 print(fullcount)
