@@ -6,3 +6,6 @@
 #27 not completed
 #32 not completed
 #54 not completed
+#59 not completed
+#60 not completed
+#61 not completed
