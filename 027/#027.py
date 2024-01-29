@@ -13,7 +13,7 @@ def SieveOfEratosthenes(num):
   return list1
 primes=SieveOfEratosthenes(1000)
 checks=SieveOfEratosthenes(1000000)
-#b has to be prime
+#b has to be positive prime
 maxcount,truea,trueb=0,0,0
 for a in range(-1000,1000):
     for b in primes:
