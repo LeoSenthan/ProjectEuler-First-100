@@ -27,5 +27,5 @@ for b in primes:
             counter+=1
         if counter>maxcount:
             maxcount,truea,trueb=counter,a,b
-            print(maxcount,truea,trueb)
-print(maxcount,truea,trueb)
+print(truea*trueb)
+#slow but works
