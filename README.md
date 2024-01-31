@@ -7,8 +7,7 @@ Project Euler
 #61 not completeds
 #64 not completed
 #66 not completed
-#68 not completed
-Up to #74 68/74 problems completed
+Up to #74 69/74 problems completed
 Past 74 everything else not completed
 #79 completed
 #97 completed
