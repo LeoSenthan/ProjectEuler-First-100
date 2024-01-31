@@ -10,9 +10,9 @@ Project Euler
 Up to #74 69/74 problems completed
 Past 74 everything else not completed
 #79 completed
-#97 completed
-#92 completed
 #85 completed
+#92 completed
 #94 completed
+#97 completed
 #99 completed
 #100 completed
