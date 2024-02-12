@@ -1,6 +1,6 @@
-from math import sqrt
+from math import isqrt
 for d in range(1,1001):
-    if sqrt(d)%1!=0:
+    if isqrt(d)==True:
         y=0
         while True:
             y+=1
