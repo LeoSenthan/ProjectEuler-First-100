@@ -1,11 +1,23 @@
-from Euler import gcd, sqrt
-L = 1500001
-maybe = set()
-nope = set()
-for m in xrange(2, int(sqrt(L/2))):
-    for n in xrange(m-1, 0, -2):
-        if gcd(m, n) == 1:
-            s = 2*(m*m + m*n)
-            for k in xrange(1, L/s+1):
-				nope.add(k*s) if k*s in maybe else maybe.add(k*s)
-print len(maybe-nope)
+total,list1=0,[]
+for m in range(1,2500):
+    for n in range(1,m):
+        total=2*m**2+2*m*n
+        list1.append(total)
+
+found = set()
+found_again = set()
+
+for a in list1:
+    if a in found_again:
+        continue
+    if a in found:
+        found.remove(a)
+        found_again.add(a)
+    else:
+        found.add(a)
+print(len(list(found)),len(list1))
+found=sorted(found)
+for num in range(0,len(found)):
+    if found[num]>1500000:
+        print(num)
+        break
