@@ -10,14 +10,15 @@ Project Euler
 Up to #75 70/75 problems completed
 Past 75 everything else not completed
 #79 completed
+#81 NOT COMPLETED
 #85 completed
 #86 completed
-
+#90 completed
 #91 completed
 #92 completed
 
 #94 completed
-
+#95 completed
 #96 completed
 #97 completed
 #98 completed
@@ -25,4 +26,4 @@ Past 75 everything else not completed
 #100 completed
 
 
-#Overall 86/100 Done
+#Overall 88/100 Done
