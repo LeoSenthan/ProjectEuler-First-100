@@ -21,26 +21,27 @@ def sum_of_divisors(factors):
         total=total*minisum
     #Includes Itself
     return total
-chainlength=0
+chainlength,lowest=0,100000000000
 for n in range(2,1000001):
-    print(n)
     chain=[]
     current=n
     Flag=True
     while True:
         chain.append(current)
         factors=primeFactors(current)
-        print(sum_of_divisors(factors)-current)
         if (sum_of_divisors(factors)-current)==n:
             break
-        elif (sum_of_divisors(factors)-current)>1000000 or (sum_of_divisors(factors)-current)==1:
+        elif (sum_of_divisors(factors)-current)>1000000 or (sum_of_divisors(factors)-current)==1 or (sum_of_divisors(factors)-current) in chain:
             Flag=False
             break
         current=sum_of_divisors(factors)-current
     if Flag==True:
         if len(chain)>=chainlength:
             print(chain)
+            print(n,len(chain))
             chainlength=len(chain)
             chain=sorted(chain)
-            print(chain[0])
+            if chain[-1]<lowest:
+                lowest=chain[-1]
 print(chainlength)
+#Highest chain length is 28 hence answer is 14316
