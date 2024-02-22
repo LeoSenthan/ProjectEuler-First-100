@@ -9,10 +9,21 @@ Project Euler
 #75 not completed
 Up to #75 70/75 problems completed
 Past 75 everything else not completed
+
+
+
+
 #79 completed
-#81 NOT COMPLETED
+
+
+
+
+
 #85 completed
 #86 completed
+#87 completed
+
+#89 completed
 #90 completed
 #91 completed
 #92 completed
@@ -26,4 +37,4 @@ Past 75 everything else not completed
 #100 completed
 
 
-#Overall 88/100 Done
+#Overall 84/100 Done
