@@ -1,23 +1,16 @@
-total,list1=0,[]
-for m in range(1,2500):
-    for n in range(1,m):
-        total=2*m**2+2*m*n
-        list1.append(total)
-
-found = set()
-found_again = set()
-
-for a in list1:
-    if a in found_again:
-        continue
-    if a in found:
-        found.remove(a)
-        found_again.add(a)
-    else:
-        found.add(a)
-print(len(list(found)),len(list1))
-found=sorted(found)
-for num in range(0,len(found)):
-    if found[num]>1500000:
-        print(num)
-        break
+from math import sqrt
+possible,impossible = set(),set()
+def gcd(a, b): # greatest common divisor function to check they are relatively prime to each other
+    while b:
+        a, b = b, a % b
+    return a
+for m in range(2, int(sqrt(1500001 / 2)) + 1):
+    for n in range(m-1,0,-2):
+        if gcd(m, n) == 1:
+            s=2*m*(m+n)
+            for k in range(1, 1500001 // s + 1):
+                if k * s in possible:
+                    impossible.add(k * s)
+                else:
+                    possible.add(k * s)
+print(len(possible-impossible))
