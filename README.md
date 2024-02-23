@@ -1,7 +1,6 @@
 Project Euler
  Solutions written in Python for the first 100 problems as efficiently as possible
 
-#54 not completed
 #60 not completed
 #61 not completed
 #66 not completed
@@ -15,4 +14,4 @@ Project Euler
 #83 not completed
 #84 not completed
 #93 not completed
-#Overall 86/100 Done
+#Overall 87/100 Done
