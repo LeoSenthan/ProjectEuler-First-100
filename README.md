@@ -5,10 +5,9 @@ Project Euler
 #61 not completed
 #66 not completed
 #75 not completed
-#80 not completed
 #81 not completed
 #82 not completed
 #83 not completed
 #84 not completed
 #93 not completed
-#Overall 90/100 Done
+#Overall 91/100 Done
