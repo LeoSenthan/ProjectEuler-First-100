@@ -1,42 +1,43 @@
-def SieveOfEratosthenes(num):
-  list1=[]
-  prime = [True for i in range(num+1)]
-  p = 2
-  while (p * p <= num):
-      if (prime[p] == True):
-          for i in range(p * p, num+1, p):
-              prime[i] = False
-      p += 1
-  for p in range(2, num+1):
-      if prime[p]:
-          list1.append(str(p))
-  return list1
-primes=SieveOfEratosthenes(20000)
-ultimateset=[]
-for prime in range(0,len(primes)):
-    primepair=[int(primes[prime])]
-    for biggerprime in range(prime+1,len(primes)): 
-        if primes[prime]+primes[biggerprime]==(primes[prime]+primes[biggerprime])[::-1]:
-            primepair.append(int(primes[biggerprime]))
-    if len(primepair)>=5:
-        ultimateset.append(primepair)
-finalset=[]
-for i in range(0,len(ultimateset)):
-    actual=[]
-    for prime in range(0,len(ultimateset[i])):
-        for z in range(0,len(ultimateset)):
-            if ultimateset[i][prime] in ultimateset[z]: 
-                actual.append(ultimateset[i][prime])
-                break
-    finalset.append(actual)
-supremeset=[]
-for i in range(0,len(finalset)):
-    count=2
-    for x in range(0,len(finalset)):
-        if finalset[i][0] in finalset[x]:
-            count+=1
-    if count>=5:
-        supremeset.append(finalset[i])
-for i in supremeset:
-    if len(i)==5:
-        print(sum(i))
+import itertools as iter 
+
+set_size = 5
+
+def prime_sieve(num):
+    primes = []
+    sieve = [True] * (num + 1)
+    for p in range(2, int(num ** 0.5) + 1):
+        if sieve[p]:
+            primes.append(p)
+            for i in range(p * p, num + 1, p):
+                sieve[i] = False
+    return primes
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+primes = prime_sieve(10000)
+
+def make_chain(chain):
+    if len(chain) == set_size:
+        return chain 
+    for p in primes:
+        if p > chain[-1] and all_prime(chain + [p]):
+            new_chain = make_chain(chain + [p])
+            if new_chain:
+                return new_chain
+    return False
+
+def all_prime(chain):
+    return all(is_prime(int(str(p[0]) + str(p[1]))) for p in iter.permutations(chain, 2))
+
+chain = make_chain([primes.pop(0)])
+
+if chain:
+    print("Project Euler 60 Solution =", sum(chain), chain)
+else:
+    print("No solution found.")
