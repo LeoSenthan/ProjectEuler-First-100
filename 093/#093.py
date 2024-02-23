@@ -1,13 +1,30 @@
-#4 unique numbers between 1-9
-#Combinations is 9C4=126
-#Permutations of different operators+-*/ is 4P3 = 24
-for n1 in range(1,9):
-    for n2 in range(1,9):
-        if n1==n2:
-            break
-        for n3 in range(1,9):
-            if n3==n2 or n3==n1:
-                break
-            for n4 in range(1,9):
-                if n4==n3 or n4==n2 or n4==n1:
-                    break
+from operator import add, sub, mul, truediv
+import itertools
+
+def seq_length(s, c=1):
+    # Calculate the length of a sequence until a missing number is found
+    while c in s: 
+        c += 1
+    return c - 1
+maxt, maxs = 0, 0
+
+# Iterate over all combinations of 4 numbers from 1 to 9
+for terms in itertools.combinations(range(1, 10), 4):
+    s = set()
+    # Iterate over all permutations of the 4 chosen numbers
+    for n in itertools.permutations(terms):
+        # Iterate over all possible combinations of arithmetic operations
+        for op in itertools.product([add, mul, sub, truediv], repeat=3):
+            # Calculate (a.b).(c.d)
+            x = op[0](op[1](n[0], n[1]), op[2](n[2], n[3]))
+            if x % 1 == 0 and x > 0: 
+                s.add(int(x))   
+            # Calculate ((a.b).c).d
+            x = op[0](op[1](op[2](n[0], n[1]), n[2]), n[3])
+            if x % 1 == 0 and x > 0: 
+                s.add(int(x))
+        # Update the maximum sequence length found so far
+        if seq_length(s) > maxs: 
+            maxs, maxt = seq_length(s), terms
+# Print the numbers that produce the longest sequence
+print(''.join(str(i) for i in maxt))
