@@ -1,16 +1,17 @@
 from math import sqrt
-#2nd last digit is 0 since last digit is 0
-square="1_2_3_4_5_6_7_8_900"
-for n1 in range(0,10):
-    for n2 in range(0,10):
-        for n3 in range(0,10):
-            for n4 in range(0,10):
-                for n5 in range(0,10):
-                    for n6 in range(0,10):
-                        for n7 in range(0,10):
-                            for n8 in range(0,10):
-                                combo=int(square[0]+str(n1)+square[2]+str(n2)+square[4]+str(n3)+square[6]+str(n4)+square[8]+str(n5)+square[10]+str(n6)+square[12]+str(n7)+square[14]+str(n8))
-                                if sqrt(combo)%1==0:
-                                    print(combo,sqrt(combo)*10)
-                                    break
-                                                              
+square = "1_2_3_4_5_6_7_8_9"
+# Calculate the lower and upper bounds for x
+lower_bound = int(sqrt(int(square.replace('_', '0'))))  # Replace '_' with '0' for lower bound
+upper_bound = int(sqrt(int(square.replace('_', '9'))))  # Replace '_' with '9' for upper bound
+#Since root ends in 9 it has to be a odd root
+for x in range(lower_bound, upper_bound + 1,2):
+    squarex = x**2
+    match=True
+    for i in range(len(square)):
+        if square[i] != '_' and int(square[i]) != (squarex // 10**(len(square) - 1 - i)) % 10:
+            match = False
+            break
+    if match:
+        print(squarex*10)
+        print(x)
+        break

@@ -5,3 +5,5 @@ Project Euler
 
 #112 Complete
 #145 Complete
+#205 Complete
+#206 Complete
