@@ -7,9 +7,11 @@ Project Euler
 #112 Completed
 #119 Completed
 #120 Completed
+#121 Completed
 #123 Not Completed
 #124 Completed
 #145 Completed
+#179 Completed
 #187 Not Completed
 #205 Completed
 #206 Completed
