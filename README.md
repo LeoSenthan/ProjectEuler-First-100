@@ -2,8 +2,12 @@ Project Euler
  Solutions written in Python for the first 100 problems as efficiently as possible
  Plus A Couple More
 #Overall 100/100 Done
-#Current Total = 117
+#Current Total = 118
+#111 Not Completed
 #113 Not Completed
 #142 Not Completed
+#173 Not Completed
 #191 Not Completed
 #243 Not Completed
+#357 Not completed
+#684 Not Completed
