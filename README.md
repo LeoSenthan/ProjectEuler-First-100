@@ -1,8 +1,8 @@
 Project Euler
- Solutions written in Python for the first 100 problems as efficiently as possible
- Plus A Couple More
+ Solutions written in Python for the first 100 problems. Plus A Couple More In Bonus Folder
 #Overall 100/100 Done
-#Current Total = 118
+
+#Current Total = 123
 #111 Not Completed
 #113 Not Completed
 #142 Not Completed
