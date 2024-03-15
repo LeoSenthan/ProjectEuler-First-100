@@ -1,13 +1,7 @@
 Project Euler
- Solutions written in Python for the first 100 and 200 
- problems. Plus A Couple More In Bonus Folder
-#Overall 100/100 Done
-
+ Solutions written in Python for the first 100
+ problems. 
+ Plus A Couple More In Bonus Folder
 #Current Total = 130
-#243 Not Completed
-#357 Not completed
-#684 Not Completed
-#700 Not Completed
-#751 Not Completed
-#816 Not Completed
-#853 Not Completed
+Not Completed:
+#105,111,132,142,174,183,191,500,692,700,751,816,853
