@@ -4,4 +4,4 @@ Project Euler
  Plus A Couple More In Bonus Folder
 #Current Total = 130
 Not Completed:
-#107,132,142,174,183,191,500,692,700,751,816,853
+#107,142,174,183,191,500,692,700,751,816,853
