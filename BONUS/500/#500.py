@@ -6,5 +6,7 @@
 #5! = 16
 #2**1 divisors = 2!
 # 2**500500 divisors = 5005001!
-from math import factorial
-print(factorial(500501)%500500507)
+# a*b*c
+# Prime = 3
+# 2 factors = 4
+#

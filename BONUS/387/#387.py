@@ -1,32 +1,40 @@
-#just add  a digit to existing harshad numbers to create  new harshad number until it is 14 digits long
-import math
-def primeFactors(n):
-  factors=[]
-  while n % 2 == 0:
-      factors.append(2)
-      n = n // 2
-  for i in range(3,int(math.sqrt(n))+1,2):
-      while n % i== 0:
-          factors.append(i)
-          n = n // i
-  if n > 2:
-      factors.append(n)
-  return True if len(factors)==1 else False
+def is_prime(n):
+    """Check if a number is prime."""
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
-digits=[1]
-harshad=["2","3","5","7"]
-total=sum(int(i) for i in harshad)
-print(total)
-count=0
-while count<10:
-    count+=1
-    digits=[]
-    for number in harshad:
-        for digit in range(0,10):
-            current=number+str(digit)
-            digitsum=sum(int(char) for char in current)
-            if primeFactors(int(current)/digitsum):
-                digits.append(current)
-    harshad=digits
-    total+=sum(int(i) for i in harshad)
-    print(total)
+def P387(t):
+    def recursive_prime_concatenation(n, d, k):
+        if d % 2 == 1 and n % 2 == 0 and n > 20:
+            return
+        if is_prime(n // d):
+            for w in [1, 3, 7, 9]:
+                m = 10 * n + w
+                if is_prime(m):
+                    concatenation_list.append(m)
+        if k > 0:
+            for j in range(10):
+                m = 10 * n + j
+                dm = d + j
+                if m % dm == 0:
+                    recursive_prime_concatenation(m, dm, k - 1)
+
+    if t < 2:
+        return 0
+
+    concatenation_list = []
+    for i in range(1, 10):
+        recursive_prime_concatenation(i, i, t - 2)
+    return sum(concatenation_list)
+
+print(P387(14))
