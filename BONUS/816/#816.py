@@ -1,7 +1,6 @@
-points=[290797]
-while len(points)!=15:
-    points.append((points[-1]**2)%50515093)
-points=sorted(points)
-for i in range(0,len(points)-1):
-    print(points[i+1]-points[i])
-    
+points=[[290797,290797**2%50515093]]
+while len(points)<15:
+    x=points[-1][-1]**2%50515093
+    y=x**2%50515093
+    points.append([x,y])
+print(points)

@@ -22,20 +22,24 @@ primes=SieveOfEratosthenes(10000000)
 #Either increase smallest exponent number by that exponent + 1 or add a new prime number
 
 count=4
-factors=[[2,3],[3,1],[5,1]]
+factors=[[2,3,16],[3,1,9],[5,1,25]]
 nextprime=3
-while count<9:
-    factors=sorted(factors,key=lambda a:a[1])
-    comparison=factors[0][0]**(factors[0][1]+1)
-    print(comparison,primes[nextprime])
-    if comparison<primes[nextprime]:
-        factors[0][1]=factors[0][1]*2+1
-    else:
-        factors.append([primes[nextprime],1])
+while count<500500:
+    optimal=1000000000000000000000000000000000000000
+    Flag=True
+    for factor in range(0,len(factors)):
+        if factors[factor][2]<primes[nextprime] and factors[factor][2]<optimal:
+            optimal=factors[factor][2]
+            next=factor
+            Flag=False
+    if Flag==True:
+        factors.append([primes[nextprime],1,primes[nextprime]**3])
         nextprime+=1
-    count+=1
-print(factors)
+    else:
+        factors[next][1]=factors[next][1]*2+1
+        factors[next][2]=factors[next][0]**(factors[next][1]+1)
+    count+=1      
 total=1
 for factor in factors:
     total=total*(factor[0]**factor[1])
-print(total)
+print(total%500500507)
