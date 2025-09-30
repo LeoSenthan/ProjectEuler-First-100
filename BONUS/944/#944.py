@@ -19,4 +19,6 @@ def S(N):
         total += p * count
     return total
 
-print(S(10**8))  # Fast even for large N
+for i in range(10000,10002):
+    print(S(i))
+#print(S(10**4))  # Fast even for large N
