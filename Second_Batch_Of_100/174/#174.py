@@ -1,24 +1,21 @@
-def factor_pairs(n):
-    factors = []
-    for i in range(1, int(n**0.5) + 1):
-        if n % i == 0:
-            factors.append((i, n // i))
-    return factors
 
-def find_solutions(n):
-    count=0
-    pairs = factor_pairs(n)
-    for pair in pairs:
-        a, b = pair
-        x = (a + b) // 2
-        y = (a - b) // 2
+def L(n):
+    total=0
+    for i in range(1,n//4+4):
+        for j in range(1,i):
+            if i**2-j**2 <n:
+                break
+            if i**2-j**2 == n:
+                total+=1
 
-        if x**2 - y**2 == n:
-            count+=1
-    return count
+    return total
 
-answer=0
-for n in range(1,100001):
-    if find_solutions(n)==15:
-        answer+=1
-print(answer)
+print(L(32))
+
+def N(n):
+    total=0
+    for i in range(1,100000):
+        if L(i) == n:
+            total+=1
+    return N(n)
+print(N(15))
